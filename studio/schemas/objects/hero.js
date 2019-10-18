@@ -43,7 +43,7 @@ export default {
         title,
         subtitle: 'Hero section',
         media,
-      };
+      }
     },
   },
-};
+}
