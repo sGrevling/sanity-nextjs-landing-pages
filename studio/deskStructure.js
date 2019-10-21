@@ -20,6 +20,11 @@ export default () =>
             .documentId('global-config')
         ),
       S.listItem()
+        .title('Articles')
+        .icon(MdDashboard)
+        .schemaType('article')
+        .child(S.documentTypeList('article').title('Articles')),
+      S.listItem()
         .title('Pages')
         .icon(MdDashboard)
         .schemaType('page')
@@ -28,5 +33,5 @@ export default () =>
         .title('Routes')
         .schemaType('route')
         .child(S.documentTypeList('route').title('Routes')),
-      ...S.documentTypeListItems().filter(hiddenDocTypes)
+      ...S.documentTypeListItems().filter(hiddenDocTypes),
     ])

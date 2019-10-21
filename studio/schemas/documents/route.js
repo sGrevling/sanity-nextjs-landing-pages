@@ -1,4 +1,4 @@
-import { MdLink } from 'react-icons/lib/md';
+import { MdLink } from 'react-icons/lib/md'
 
 export default {
   name: 'route',
@@ -43,7 +43,7 @@ export default {
       return {
         title: slug === '/' ? '/' : `/${slug}`,
         subtitle: `Page: ${pageTitle}`,
-      };
+      }
     },
   },
-};
+}
