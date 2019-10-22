@@ -32,6 +32,12 @@ export default {
       },
     },
     {
+      name: 'related',
+      title: 'Related Articles',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'article' } }],
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
@@ -41,6 +47,11 @@ export default {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+    },
+    {
+      name: 'abstract',
+      title: 'Abstract',
+      type: 'abstractContent',
     },
     {
       name: 'body',

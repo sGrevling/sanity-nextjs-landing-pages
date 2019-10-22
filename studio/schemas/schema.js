@@ -27,6 +27,7 @@ import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
 import category from "./objects/category";
 import blockContent from "./objects/blockContent";
+import abstractContent from "./objects/abstractContent";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,5 +53,6 @@ export default createSchema({
     author,
     category,
     blockContent,
+    abstractContent,
   ]),
 })

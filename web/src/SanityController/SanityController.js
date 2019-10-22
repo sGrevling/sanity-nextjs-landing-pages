@@ -16,7 +16,7 @@ class SanityController {
   getData = (type, fields) => client.fetch(`*[_type == "${type}"] | order(_createdAt asc) [0..10] {${fields}}`, {});
 
   getArticleSlugs = () =>
-    this.getData('article', 'title, slug, preview');
+    this.getData('article', 'title, slug, mainImage, publishedAt, abstract');
 
   getArticle = (slug) =>
     client.fetch(`*[_type == "article" && slug.current == "${slug}"][0]`, {});

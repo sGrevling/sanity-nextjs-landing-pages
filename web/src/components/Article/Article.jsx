@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {renderBlockContent} from "../../SanityController/sanityUtils";
-import { Heading1 } from '@sb1/ffe-core-react';
+import { Heading2 } from '@sb1/ffe-core-react';
 
 export const Article = (props) => {
   const [article, setArticle] = useState(null);
@@ -26,9 +26,9 @@ export const Article = (props) => {
 
   const renderArticleContent = () => (
     <div className="articleContent">
-      <Heading1>{article.title}</Heading1>
       {getImg()}
-      {renderBody()}
+      <Heading2>{article.title}</Heading2>
+      {renderBlockContent(article.body, 'articleBody')}
     </div>
   );
 
@@ -36,8 +36,6 @@ export const Article = (props) => {
     const {url, width, height} = props.sanityController.imgObjectFor(article.mainImage, 800, 600);
     return <img src={url} style={{width, height}} alt="articleMainImage"/>
   };
-
-  const renderBody = () => renderBlockContent(article.body, 'articleBody');
 
   return (
     <article className="article">
