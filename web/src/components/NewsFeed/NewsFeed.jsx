@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from "react-router-dom";
 
 const NewsFeed = (props) => {
   const [articles, setArticles] = useState(null);
@@ -6,18 +7,32 @@ const NewsFeed = (props) => {
   useEffect(() => {
     props.sanityController.getArticleSlugs()
       .then(articles => {
-        console.log(articles);
+        setArticles(articles);
       })
   },[]);
 
+  console.log(articles);
+
   return (
     <section className="newsFeed">
-      <button
-        onClick={() => setArticles('success')}
-      >
-        Hello
-      </button>
-      {articles ? articles : 'no'}
+      {
+        articles ? (
+        articles.map(article => (
+          <Link
+            to={{
+              pathname: `/articles/${article.slug.current}`,
+              state: {
+                slug: article.slug.current
+              }
+            }}
+            key={`article_${article.slug.current}`}
+            // onClick={() => onArticleListItemClick(article.slug.current)}
+          >
+            {article.title}
+          </Link>
+          )
+        )
+      ) : '...'}
     </section>
   );
 };

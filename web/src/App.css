@@ -1,12 +1,47 @@
 .App {
-  text-align: center;
 }
 
 .App-header {
+  /*text-align: center;*/
   font-size: calc(10px + 2vmin);
-  text-align: center;
-  padding: 10px;
-  color: #002776;
-  font-weight: bold;
+  height: 235px;
+
   font-family: MuseoSansRounded-700,arial,sans-serif;
+
+  padding-left: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.headerLogo {
+  width: 300px;
+  height: 86px;
+}
+
+.App-header::after {
+  content: '';
+  display: block;
+  height: 235px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  background-color: #005aa4;
+  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20948%2044%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20fill-rule%3D%22evenodd%22%20d%3D%22M948.833324%2044c-156.014091%200-196.629091-28.783777-275.10464-28.783777-78.475549%200-87.754399%2010.982687-177.750909%2010.982687S386.900513%200%20292.210156%200C197.5198%200%20179.35287%2044-.67114%2044h949.504464z%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: 80% 100.2%;
+  background-size: 948px 44px;
+}
+
+.App-header a{
+  color: white;
+  /*color: #002776;*/
+  text-decoration: none;
+}
+
+.App-content {
+  padding-top: 20px;
 }
